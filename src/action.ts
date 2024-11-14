@@ -210,7 +210,7 @@ export async function run(): Promise<void> {
         );
       }
       await execute(
-        `apply ${inputs.stackName} --auto-approve`,
+        `apply ${inputs.stackName} --auto-approve | tee apply-output.txt`,
         inputs,
         (output, runUrl) =>
           hasTerraformChanges(output)
