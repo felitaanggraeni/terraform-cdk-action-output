@@ -79,14 +79,13 @@ async function execute(
   core.debug(`Installing terraform`);
   await setupTerraform(inputs.terraformVersion);
 
-  
   const mainCommand = `${cdktfCommand} ${inputs.cdktfArgs}`;
   const fullCdktfCommand = inputs.customNpxArgs
-  ? `npx --yes ${inputs.customNpxArgs} cdktf-cli@${inputs.cdktfVersion} ${mainCommand}`
-  : `npx --yes cdktf-cli@${inputs.cdktfVersion} ${mainCommand}`;
-  
-  core.info('fullCdktfCommand: ' + fullCdktfCommand);
-  
+    ? `npx --yes ${inputs.customNpxArgs} cdktf-cli@${inputs.cdktfVersion} ${mainCommand}`
+    : `npx --yes cdktf-cli@${inputs.cdktfVersion} ${mainCommand}`;
+
+  core.info("fullCdktfCommand: " + fullCdktfCommand);
+
   core.debug(`Executing: ${fullCdktfCommand}`);
   let output = "";
   try {

@@ -97,7 +97,7 @@ const inputs = {
   },
 };
 
-const repoName = "terraform-cdk-action";
+const repoName = "terraform-cdk-action-output";
 const description =
   "The Terraform CDK GitHub Action allows you to run CDKTF as part of your CI/CD workflow.";
 

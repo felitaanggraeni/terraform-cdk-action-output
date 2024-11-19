@@ -105,4 +105,4 @@ jobs:
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
         with:
-          payload: '{"repository":"terraform-cdk-action","version":"${{ steps.git_label.outputs.version }}"}'
+          payload: '{"repository":"terraform-cdk-action-output","version":"${{ steps.git_label.outputs.version }}"}'

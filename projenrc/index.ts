@@ -47,7 +47,7 @@ export class TerraformCdkActionProject extends GitHubActionTypeScriptProject {
     const { name, description, inputs, metadata } = options;
 
     super({
-      name: name ?? "terraform-cdk-action",
+      name: name ?? "terraform-cdk-action-output",
       description,
       repository: `https://github.com/hashicorp/${name}.git`,
       authorName: "HashiCorp",

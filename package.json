@@ -1,9 +1,9 @@
 {
-  "name": "terraform-cdk-action",
+  "name": "terraform-cdk-action-output",
   "description": "The Terraform CDK GitHub Action allows you to run CDKTF as part of your CI/CD workflow.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/hashicorp/terraform-cdk-action.git"
+    "url": "https://github.com/hashicorp/terraform-cdk-action-output.git"
   },
   "scripts": {
     "build": "npx projen build",
