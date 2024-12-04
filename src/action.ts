@@ -85,11 +85,14 @@ async function execute(
     : `npx --yes cdktf-cli@${inputs.cdktfVersion} ${mainCommand}`;
 
   core.info("fullCdktfCommand: " + fullCdktfCommand);
-
+  
+  const wrappedCommand = `bash -c "${fullCdktfCommand}"`;
+  core.info("wrappedCommand: " + wrappedCommand);
+  
   core.debug(`Executing: ${fullCdktfCommand}`);
   let output = "";
   try {
-    await exec(`bash -c "${fullCdktfCommand}"`, [], {
+    await exec(wrappedCommand, [], {
       cwd: inputs.workingDirectory || process.cwd(),
       env: {
         ...process.env,
