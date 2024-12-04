@@ -179,7 +179,7 @@ export async function run(): Promise<void> {
         );
       }
       await execute(
-        `plan ${inputs.stackName}  | tee plan-output.txt`,
+        `plan ${inputs.stackName} --out=tfplan | terraform show -json tfplan | tee plan_output.json`,
         inputs,
         (output, runUrl) =>
           hasTerraformChanges(output)
@@ -215,7 +215,7 @@ export async function run(): Promise<void> {
         );
       }
       await execute(
-        `apply ${inputs.stackName} --auto-approve | tee apply-output.txt`,
+        `apply ${inputs.stackName} --auto-approve | terraform show -json terraform.tfstate | tee apply_output.json`,
         inputs,
         (output, runUrl) =>
           hasTerraformChanges(output)
