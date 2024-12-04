@@ -89,7 +89,7 @@ async function execute(
   core.debug(`Executing: ${fullCdktfCommand}`);
   let output = "";
   try {
-    await exec(`bash -c ${fullCdktfCommand}`, [], {
+    await exec(`bash -c "${fullCdktfCommand}"`, [], {
       cwd: inputs.workingDirectory || process.cwd(),
       env: {
         ...process.env,
